@@ -34,7 +34,7 @@
     });
 })(jQuery);
 
-(function ($) {
+/*(function ($) {
     var wTop = $('.ban2').offset().top;
     $(window).scroll(function () {
         var t = $(document).scrollTop();
@@ -44,4 +44,4 @@
             $('.ban2').css({ 'position': 'static', 'margin': '0 auto 16px auto' });
         }
     });
-})(jQuery);
+})(jQuery);*/

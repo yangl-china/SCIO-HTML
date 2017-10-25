@@ -61,14 +61,14 @@ a{color: #000;}
 </style>
 <link type="text/css" rel="stylesheet" href="http://images.china.cn/images1/en/gxb/ctjs.css"/>
 <script type="text/javascript">
-
-$(document).ready(function(){
+function menu(){
   $('.more').hover(function(){
     $('.listshow').show();
   },function(){
     $('.listshow').hide();
   });
-});
+}
+window.onload = menu;
 </script>
 <script type="text/javascript" src="http://www.china.com.cn/player/video.js">
 </script>
@@ -106,11 +106,11 @@ $(document).ready(function(){
   <!--webbot bot="SingleNode" style="A:#IMAGE:#FONT:#TARGET:_top" nodeid="" szinfo="MORE +" TAG="BODY" PREVIEW="&lt;a href=nolink.htm class=&gt;MORE +&lt;/a&gt;" startspan --><!--webbot bot="SingleNode" endspan i-checksum="0" -->
   <ul class="listshow">
   <li><!--webbot bot="SingleNode" style="A:#IMAGE:#FONT:#TARGET:_top" nodeid="7252506" szinfo="INTERNATIONAL EXCHANGES" TAG="BODY" PREVIEW="&lt;a href=nolink.htm class=&gt;INTERNATIONAL EXCHANGES &lt;/a&gt;" startspan --><!--webbot bot="SingleNode" endspan i-checksum="0" --></li>
-  <li><!--webbot bot="SingleNode" style="A:#IMAGE:#FONT:#TARGET:_top" nodeid="7247533" szinfo="CHINA VOICES" TAG="BODY" PREVIEW="&lt;a href=nolink.htm class=&gt;CHINA VOICES&lt;/a&gt;" startspan --><!--webbot bot="SingleNode" endspan i-checksum="0" --></li>
-
+  <li><!--webbot bot="SingleNode" style="A:#IMAGE:#FONT:#TARGET:_top" nodeid="7247533" szinfo="CHINA VOICES" TAG="BODY" PREVIEW="&lt;a href=nolink.htm class=&gt;CHINA VOICES&lt;/a&gt;" startspan --><!--webbot bot="SingleNode" endspan i-checksum="0" --></li> 
   <li><!--webbot bot="SingleNode" style="A:#IMAGE:#FONT:#TARGET:_top" nodeid="7247539" szinfo="INFOGRAPHICS" TAG="BODY" PREVIEW="&lt;a href=nolink.htm class=&gt;INFOGRAPHICS&lt;/a&gt;" startspan --><!--webbot bot="SingleNode" endspan i-checksum="0" --></li>
-  <li> <!--webbot bot="SingleNode" style="A:#IMAGE:#FONT:#TARGET:_top" nodeid="7247532" szinfo="WHITE PAPERS" TAG="BODY" PREVIEW="&lt;a href=nolink.htm class=&gt;WHITE PAPERS&lt;/a&gt;" startspan --><!--webbot bot="SingleNode" endspan i-checksum="0" --></li>  
-  <li><!--webbot bot="SingleNode" style="A:#IMAGE:#FONT:#TARGET:_top" nodeid="7247538" szinfo="FEATURED" TAG="BODY" PREVIEW="&lt;a href=nolink.htm class=&gt;FEATURED&lt;/a&gt;" startspan --><!--webbot bot="SingleNode" endspan i-checksum="0" --></li>
+  <li> <!--webbot bot="SingleNode" style="A:#IMAGE:#FONT:#TARGET:_top" nodeid="7247532" szinfo="WHITE PAPERS" TAG="BODY" PREVIEW="&lt;a href=nolink.htm class=&gt;WHITE PAPERS&lt;/a&gt;" startspan --><!--webbot bot="SingleNode" endspan i-checksum="0" --></li>
+  <li style="background:#FFF; border-top: 1px solid #1247a5;">
+  <a href="#" style="color:#1247a5;">FEATURED</a></li>  
   <li><!--webbot bot="SingleNode" style="A:#IMAGE:#FONT:#TARGET:_top" nodeid="7247622" szinfo="CHINA FACTS" TAG="BODY" PREVIEW="&lt;a href=nolink.htm class=&gt;CHINA FACTS&lt;/a&gt;" startspan --><!--webbot bot="SingleNode" endspan i-checksum="0" --></li>
   
   </ul>
@@ -157,8 +157,6 @@ $(document).ready(function(){
   <script type="text/javascript">wd_paramtracker("_wdxid=000000000000000000000000000000000000000000")</script> 
 </div>
 <script type="text/javascript" src="http://images.china.cn/images1/resource/scripts/jquery/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="./js/main.js">
-</script>
 <script type="text/javascript">
 (function($) {
 	$('.cp p:first()').addClass('cp_f');
