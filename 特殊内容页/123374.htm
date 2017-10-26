@@ -155,14 +155,14 @@ a{color: #000;}
 <script type="text/javascript" src="http://images.china.cn/images1/en/gxb/index.js">
 </script>
 <script type="text/javascript">
-
-$(document).ready(function(){
+function menu(){
   $('.more').hover(function(){
     $('.listshow').show();
   },function(){
     $('.listshow').hide();
   });
-});
+}
+window.onload = menu;
 </script>
 </body>
 </html>

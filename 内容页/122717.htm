@@ -60,16 +60,6 @@ a{color: #000;}
 .box5 a { font-size:14px;}
 </style>
 <link type="text/css" rel="stylesheet" href="http://images.china.cn/images1/en/gxb/ctjs.css"/>
-<script type="text/javascript">
-
-$(document).ready(function(){
-  $('.more').hover(function(){
-    $('.listshow').show();
-  },function(){
-    $('.listshow').hide();
-  });
-});
-</script>
 <script type="text/javascript" src="http://www.china.com.cn/player/video.js">
 </script>
 </head>
@@ -164,6 +154,15 @@ $(document).ready(function(){
 	$('.cp p:first()').addClass('cp_f');
 })(jQuery);
 </script>
-
+<script type="text/javascript">
+function menu(){
+  $('.more').hover(function(){
+    $('.listshow').show();
+  },function(){
+    $('.listshow').hide();
+  });
+}
+window.onload = menu;
+</script>
 </body>
 </html>
