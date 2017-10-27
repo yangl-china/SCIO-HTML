@@ -31,9 +31,19 @@
         #autopage { clear: both; text-align: center; }
         #autopage a { color: #fff; padding: 11px; font-size: 26px;line-height: 35px;}
         #autopage span { color: #FFF; padding: 11px; font-size: 26px;line-height: 35px;}
-        .ban2 { width:100%; margin:auto; height:46px; background-color:#1247a5; color:#FFFFFF; font-size:15px; font-weight:bold; line-height:28px; clear:both;}
-        .ban2 li { border-right: solid 1px #fff; text-align:center; height:28px; float:left; padding:9px 0;}
-        .ban2 li a { color:#FFFFFF; font-size:15px; font-weight:bold; line-height:28px; font-family:Arial;}
+        .ban2 { width:100%; margin:0 auto 16px auto; height:46px; background-color:#1247a5; color:#FFFFFF; font-size:15px; font-weight:bold; line-height:28px; clear:both;}
+		@media screen and (max-width: 1199px) {
+			.ban2 {
+			   min-width:1200px;
+			}
+		}
+		.ban2 li { border-right: solid 1px #fff; text-align:center; height:28px; float:left; padding:9px 0;}
+		.ban2 li a { color:#FFFFFF; font-size:15px; font-weight:bold; line-height:28px; font-family:Arial;}
+		.ban2 .more {text-align:left; }
+		.ban2 .more a{ display: block; padding-left: 18px; padding-bottom: 8px;}
+		.ban2 ul li .listshow {width:208px;display: none; position: relative; background-color: #1247a5; opacity: .85; filter:alpha(opacity=85);}
+		.ban2 ul li ul li{ float: none; padding-left: 2px; text-align:left; border-right:none;}
+		.ban2 ul li ul li a{ font-size:12px; font-weight:normal;}
         #autopage { font-size:  14px; color: #000; }
         #autopage a{ color: #000; }
         #autopage span { color: #F00; }
@@ -47,32 +57,40 @@
     <div class="ban2">
         <div style="width:1200px; margin:auto;">
             <ul>
-                <li style="width:128px;">
-                    <a href="http://english.scio.gov.cn/index.htm" target="_top" class="">HOME</a>
-                </li>
-                <li style="width:128px;">
-                    <a href="http://english.scio.gov.cn/node_7247536.htm" target="_top" class="">TOP NEWS</a>
-                </li>
-                </li>
-                <li style="width:150px;">
-                    <a href="http://english.scio.gov.cn/node_7247535.htm" target="_top" class="">PRESS ROOM</a>
-                </li>
-                <li style="width:200px;">
-                    <a href="http://english.scio.gov.cn/node_7247531.htm" target="_top" class="">BELT AND ROAD</a>
-                </li>
-                <li style="width:122px;">
-                    <a href="http://english.scio.gov.cn/node_7247534.htm" target="_top" class="">IN-DEPTH</a>
-                </li>
-                <li style="width:165px;">
-                    <a href="http://english.scio.gov.cn/node_7247532.htm" target="_top" class="">WHITE PAPERS</a>
-                </li>
-
-                <li style="width:155px;">
-                    <a href="http://english.scio.gov.cn/node_7247533.htm" target="_top" class="">CHINA VOICES</a>
-                </li>
-                <li style="width:140px; border-right: none;">
-                    <a href="http://english.scio.gov.cn/node_7247530.htm" target="_top" class="">ABOUT SCIO</a>
-                </li>
+            	<li style="width:81px;">
+				  <a href="http://english.scio.gov.cn/index.htm" target="_top" class="">HOME</a>
+				<li style="width:116px;">
+				  <a href="http://english.scio.gov.cn/node_7247536.htm" target="_top" class="">TOP NEWS</a>
+				</li>
+				<li style="width:138px;">
+				  <a href="http://english.scio.gov.cn/node_7247535.htm" target="_top" class="">PRESS ROOM</a>
+				</li>
+				<li style="width:120px;">
+					<a href="http://english.scio.gov.cn/node_7252795.htm" target="_top" class="">SCIO NEWS</a>
+				</li>
+				<li style="width:148px;">
+					<a href="http://english.scio.gov.cn/node_7252897.htm" target="_top" class="">CHINA PROJECTS</a>
+				</li>
+				<li style="width:153px;">
+					<a href="http://english.scio.gov.cn/node_7247531.htm" target="_top" class="">BELT AND ROAD</a>
+				</li>
+				<li style="width:100px;">
+					<a href="http://english.scio.gov.cn/node_7247534.htm" target="_top" class="">IN-DEPTH</a>
+				</li>
+				<li style="width:128px;">
+				 <a href="http://english.scio.gov.cn/node_7247530.htm" target="_top" class="">ABOUT SCIO</a>
+				 </li>
+				<li style="width:128px; border-right: none;" class="more">
+				  <a href="#" target="_top" class="">MORE +</a>
+				  <ul class="listshow">
+					<li><a href="http://english.scio.gov.cn/node_7252506.htm" target="_top" class="">INTERNATIONAL EXCHANGES</a></li>
+					<li><a href="http://english.scio.gov.cn/node_7247533.htm" target="_top" class="">CHINA VOICES</a></li>
+					<li><a href="http://english.scio.gov.cn/node_7247539.htm" target="_top" class="">INFOGRAPHICS</a></li>
+					<li><a href="http://english.scio.gov.cn/node_7247532.htm" target="_top" class="">WHITE PAPERS</a></li>	
+					<li><a href="http://english.scio.gov.cn/node_7247538.htm" target="_top" class="">FEATURED</a></li>
+					<li><a href="http://english.scio.gov.cn/node_7247622.htm" target="_top" class="">CHINA FACTS</a></li>
+				  </ul>
+				</li>
             </ul>
         </div>
     </div>
@@ -102,6 +120,16 @@
     </div>
     <script type="text/javascript" src="http://images.china.cn/images1/resource/scripts/jquery/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="http://images.china.cn/images1/en/gxb/search.js"></script>
+    <script type="text/javascript">
+		function menu(){
+			$('.more').hover(function(){
+				$('.listshow').show();
+			},function(){
+				$('.listshow').hide();
+			});
+		}
+		window.onload = menu;
+	</script>
 </body>
 
 </html>
