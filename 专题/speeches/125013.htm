@@ -110,6 +110,8 @@ background-color:#f7202f;  background: -webkit-linear-gradient(left,#f7202f ,#ff
   Without written authorization from english.scio.gov.cn, such content shall not be republished or used in any form.
   </div>
   </div>
+  <div class="homebtn" style="position: fixed;width: 50px;height: 50px;top:518px;right: 0;cursor: pointer;z-index: 100000;"  onclick="window.open('http://english.scio.gov.cn/','_self')"><img style="width: 50px;height:50px;" src="http://images.china.cn/images1/en/gxb/20171116/home.jpg"/></div>
+  <div class="topbtn" style="position: fixed;width: 50px;height: 50px;top:572px;right: 0;cursor: pointer;z-index: 100000;"><img style="width: 50px;height:50px;" src="http://images.china.cn/images1/en/gxb/20171116/totop.jpg"/></div>
 <div style="display:none;">
   <script type="text/javascript">document.write(unescape("%3Cscript src='http://cl2.webterren.com/webdig.js?z=12' type='text/javascript'%3E%3C/script%3E"));</script>
   <script type="text/javascript">wd_paramtracker("_wdxid=000000000000000000000000000000000000000000")</script>
@@ -144,6 +146,9 @@ $(function () {
         }
     });
 })(jQuery);
+$(".topbtn").click(function() {
+  $("html,body").animate({scrollTop:0}, 500);
+}); 
 </script>
 </body>
 </html>

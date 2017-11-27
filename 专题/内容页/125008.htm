@@ -136,6 +136,8 @@ background-color:#f7202f;  background: -webkit-linear-gradient(left,#f7202f ,#ff
   Without written authorization from english.scio.gov.cn, such content shall not be republished or used in any form.
   </div>
   </div>
+  <div class="homebtn" style="position: fixed;width: 50px;height: 50px;top:518px;right: 0;cursor: pointer;z-index: 100000;"  onclick="window.open('http://english.scio.gov.cn/','_self')"><img style="width: 50px;height:50px;" src="http://images.china.cn/images1/en/gxb/20171116/home.jpg"/></div>
+  <div class="topbtn" style="position: fixed;width: 50px;height: 50px;top:572px;right: 0;cursor: pointer;z-index: 100000;"><img style="width: 50px;height:50px;" src="http://images.china.cn/images1/en/gxb/20171116/totop.jpg"/></div>
 <div id="webdig_source" style="display:none"> 
   <!--webbot bot="AdvContent" comstring="&lt;Source&gt;SourcePh&lt;/Source&gt;" typeid="0" pagenumstyle="" pageprefix="" pagepostfix="" pageturnoverstyle="" firstpage="" finallypage="" lastpage="" nextpage="" isshow="0" isshowcode="0" TAG="BODY" PREVIEW="[高级文章内容]"  startspan --><!--webbot bot="AdvContent" endspan i-checksum="0" --> 
 </div>
@@ -165,6 +167,9 @@ background-color:#f7202f;  background: -webkit-linear-gradient(left,#f7202f ,#ff
         }
     });
 })(jQuery);
+$(".topbtn").click(function() {
+  $("html,body").animate({scrollTop:0}, 500);
+}); 
 </script>
 </body>
 </html>
