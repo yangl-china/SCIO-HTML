@@ -25,7 +25,8 @@
 		"Environment": 'w23',
 		"Media Cooperation": 'w24',
 		"International Cooperation": 'w25',
-		"International Exchanges": 'w26'
+        "International Exchanges": 'w26',
+        "Aid": 'w27'
     };
     $('.mmmm').each(function () {
         var curTitle = $.trim($(this).text());

@@ -70,3 +70,6 @@
 .w25:hover { color: #fff; background: #E2339A; font-size:12px; line-height:18px; font-weight:bold; padding:0 3px;}
 .w26 a{ color: #CC9966; font-size:12px; padding:0 3px; line-height:18px; font-weight:bold; font-family:Georgia; font-style:italic;}
 .w26:hover { color: #fff; background: #CC9966; font-size:12px; padding:0 3px; line-height:18px; font-weight:bold;}
+.w27 { color: #956f2e; font-size:14px; padding:0 4px; line-height:18px; font-weight:bold; font-family:Georgia; font-style:italic;}
+.w27 a{ color: #956f2e; font-size:14px; padding:0 4px; line-height:18px; font-weight:bold; font-family:Georgia; font-style:italic;}
+.w27:hover { color: #fff; background: #956f2e; font-size:14px; padding:0 3px; line-height:18px; font-weight:bold;}
