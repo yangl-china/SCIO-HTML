@@ -26,6 +26,7 @@
     .box p{width: 315px;height: 405px;font-size: 35px;font-weight:bold;line-height: 66px;letter-spacing: 0px;color: #000;margin: 15px;filter:alpha(opacity=50);/*IE*/opacity:0.5;background: #fff;padding-left: 5px;}
 
     .bookWord{display: inline-block;width: 484px;height:675px;font-size: 20px;line-height: 27px;backface-visibility: visible;background-color: #f0f0f0;-webkit-column-count: 2; -webkit-column-gap: 40px; -moz-column-count: 2; -moz-column-gap: 40px;-ms-column-count: 2; -ms-column-gap: 40px;column-count: 2; column-gap: 40px;background: url(http://images.china.cn/images1/en/gxb/20171211/right.png)  0px -8px no-repeat;}
+    .btn{display: inline-block;width: 484px;height:668px;backface-visibility: visible;-webkit-column-count: 2; -webkit-column-gap: 40px; -moz-column-count: 2; -moz-column-gap: 40px;-ms-column-count: 2; -ms-column-gap: 40px;column-count: 2; column-gap: 40px;}
     .frist{left: 0;z-index: 1;}
     .frist img{z-index: 1;}
     .last{right: 0;z-index: 1;}
@@ -71,7 +72,7 @@
             $('.runPage').eq(i).children('.box1').css('z-index',20-2*i).hide();
         };
 
-        $('.bookWord').bind('click',function(){
+        $('.btn').bind('click',function(){
                 if ( pageNum <= 10 ) {
                     runNext(pageNum);
                 pageNum++;
@@ -114,7 +115,7 @@
             };
             setTimeout(function(){
                 element.css('z-index',22-2*index);
-                element.children('.bookWord').css('z-index',20-2*index).show();
+                element.children('.bookWord').css('z-index',22-2*index).show();
                 element.children('.box1').css('z-index',20-2*index).hide();		
             },1000);
         }
@@ -130,66 +131,77 @@
             <div class="bookPage runPage">
                 <div class="bookWord" style="background:url(http://images.china.cn/images1/en/gxb/20171211/cover.png) 0px -8px no-repeat">
                     <FOUNDER-XY type="articlelist" data="{'columnid':[8001952],'articletype':'all','article_attr':'all','columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><p style="position:absolute;top: 235px;left: 160px;">${article.summary}</p></#list></FOUNDER-XY>
+                    <div class="btn"></div>
                 </div>
                 <div class="box1"><p><FOUNDER-XY type="columnlist" data="{'columnid':[8001952],'columntype':'self'}"><#list columns as column>${column.name}</#list></FOUNDER-XY></p></div>
             </div>
             <div class="bookPage runPage">
                 <div class="bookWord">
                     <FOUNDER-XY type="articlelist" data="{'columnid':[8001954],'articletype':'all','article_attr':'all','columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><div class="box2"><span>${article.title}</span><div style="width: 58px;height: 2px;background-color: #e1be3c;margin: 10px 0px;"></div>${article.content}</div></#list></FOUNDER-XY>
+                    <div class="btn"></div>
                 </div>
                 <div class="box1"><p><FOUNDER-XY type="columnlist" data="{'columnid':[8001952],'columntype':'self'}"><#list columns as column>${column.name}</#list></FOUNDER-XY></p><div class="page"><span>1</span>&nbsp;/&nbsp;<span>10</span></div></div>
             </div>
             <div class="bookPage runPage">
                 <div class="bookWord">
                     <FOUNDER-XY type="articlelist" data="{'columnid':[8001954],'articletype':'all','article_attr':'all','columntype':'self', 'showall':'true', 'start': 1, 'count': 1}"><#list articles as article><div class="box3"><span><a href="${article.url}">${article.title}</a></span><div style="width:34px;height:2px;background-color:#000;position: absolute;top: 52px;"></div><p><a>${article.summary}</a></p></div></#list></FOUNDER-XY>
+                    <div class="btn"></div>
                 </div>
                 <div class="box1"><p><FOUNDER-XY type="columnlist" data="{'columnid':[8001952],'columntype':'self'}"><#list columns as column>${column.name}</#list></FOUNDER-XY></p><div class="page"><span>2</span>&nbsp;/&nbsp;<span>10</span></div></div>
             </div>
             <div class="bookPage runPage">
                 <div class="bookWord">
                     <FOUNDER-XY type="articlelist" data="{'columnid':[8001954],'articletype':'all','article_attr':'all','columntype':'self', 'showall':'true', 'start': 2, 'count': 1}"><#list articles as article><div class="box4"><img src="${article.picBig}"><dl><dt><p><a href="${article.url}">${article.title}</a></p></dt><dd><p>${article.summary}</p></dd></dl></div><dl class="line"><dt></dt><dd></dd></dl></#list></FOUNDER-XY>
+                    <div class="btn"></div>
                 </div>
                 <div class="box1"><p><FOUNDER-XY type="columnlist" data="{'columnid':[8001952],'columntype':'self'}"><#list columns as column>${column.name}</#list></FOUNDER-XY></p><div class="page"><span>3</span>&nbsp;/&nbsp;<span>10</span></div></div>
             </div>
             <div class="bookPage runPage">
                 <div class="bookWord">
                     <FOUNDER-XY type="articlelist" data="{'columnid':[8001954],'articletype':'all','article_attr':'all','columntype':'self', 'showall':'true', 'start': 3, 'count':1 }"><#list articles as article><div class="box4"><img src="${article.picBig}"><dl><dt><p><a href="${article.url}">${article.title}</a></p></dt><dd><p>${article.summary}</p></dd></dl></div><dl class="line"><dt></dt><dd></dd></dl></#list></FOUNDER-XY>
+                    <div class="btn"></div>
                 </div>
                 <div class="box1"><p><FOUNDER-XY type="columnlist" data="{'columnid':[8001952],'columntype':'self'}"><#list columns as column>${column.name}</#list></FOUNDER-XY></p><div class="page"><span>4</span>&nbsp;/&nbsp;<span>10</span></div></div>
             </div>
             <div class="bookPage runPage">
                 <div class="bookWord">
                     <FOUNDER-XY type="articlelist" data="{'columnid':[8001954],'articletype':'all','article_attr':'all','columntype':'self', 'showall':'true', 'start': 4, 'count': 1}"><#list articles as article><div class="box4"><img src="${article.picBig}"><dl><dt><p><a href="${article.url}">${article.title}</a></p></dt><dd><p>${article.summary}</p></dd></dl></div><dl class="line"><dt></dt><dd></dd></dl></#list></FOUNDER-XY>
+                    <div class="btn"></div>
                 </div>
                 <div class="box1"><p><FOUNDER-XY type="columnlist" data="{'columnid':[8001952],'columntype':'self'}"><#list columns as column>${column.name}</#list></FOUNDER-XY></p><div class="page"><span>5</span>&nbsp;/&nbsp;<span>10</span></div></div>
             </div>
             <div class="bookPage runPage">
                 <div class="bookWord">
                     <FOUNDER-XY type="articlelist" data="{'columnid':[8001954],'articletype':'all','article_attr':'all','columntype':'self', 'showall':'true', 'start': 5, 'count': 1}"><#list articles as article><div class="box4"><img src="${article.picBig}"><dl><dt><p><a href="${article.url}">${article.title}</a></p></dt><dd><p>${article.summary}</p></dd></dl></div><dl class="line"><dt></dt><dd></dd></dl></#list></FOUNDER-XY>
+                    <div class="btn"></div>
                 </div>
                 <div class="box1"><p><FOUNDER-XY type="columnlist" data="{'columnid':[8001952],'columntype':'self'}"><#list columns as column>${column.name}</#list></FOUNDER-XY></p><div class="page"><span>6</span>&nbsp;/&nbsp;<span>10</span></div></div>
             </div>
             <div class="bookPage runPage">
                 <div class="bookWord">
                     <FOUNDER-XY type="articlelist" data="{'columnid':[8001954],'articletype':'all','article_attr':'all','columntype':'self', 'showall':'true', 'start': 6, 'count': 1}"><#list articles as article><div class="box4"><img src="${article.picBig}"><dl><dt><p><a href="${article.url}">${article.title}</a></p></dt><dd><p>${article.summary}</p></dd></dl></div><dl class="line"><dt></dt><dd></dd></dl></#list></FOUNDER-XY>
+                    <div class="btn"></div>
                 </div>
                 <div class="box1"><p><FOUNDER-XY type="columnlist" data="{'columnid':[8001952],'columntype':'self'}"><#list columns as column>${column.name}</#list></FOUNDER-XY></p><div class="page"><span>7</span>&nbsp;/&nbsp;<span>10</span></div></div>
             </div>
             <div class="bookPage runPage">
                 <div class="bookWord">
                     <FOUNDER-XY type="articlelist" data="{'columnid':[8001954],'articletype':'all','article_attr':'all','columntype':'self', 'showall':'true', 'start': 7, 'count': 1}"><#list articles as article><div class="box4"><img src="${article.picBig}"><dl><dt><p><a href="${article.url}">${article.title}</a></p></dt><dd><p>${article.summary}</p></dd></dl></div><dl class="line"><dt></dt><dd></dd></dl></#list></FOUNDER-XY>
+                    <div class="btn"></div>
                 </div>
                 <div class="box1"><p><FOUNDER-XY type="columnlist" data="{'columnid':[8001952],'columntype':'self'}"><#list columns as column>${column.name}</#list></FOUNDER-XY></p><div class="page"><span>8</span>&nbsp;/&nbsp;<span>10</span></div></div>
             </div>
             <div class="bookPage runPage">
                 <div class="bookWord">
                     <FOUNDER-XY type="articlelist" data="{'columnid':[8001954],'articletype':'all','article_attr':'all','columntype':'self', 'showall':'true', 'start': 8, 'count': 1}"><#list articles as article><div class="box4"><img src="${article.picBig}"><dl><dt><p><a href="${article.url}">${article.title}</a></p></dt><dd><p>${article.summary}</p></dd></dl></div><dl class="line"><dt></dt><dd></dd></dl></#list></FOUNDER-XY>
+                    <div class="btn"></div>
                 </div>
                 <div class="box1"><p><FOUNDER-XY type="columnlist" data="{'columnid':[8001952],'columntype':'self'}"><#list columns as column>${column.name}</#list></FOUNDER-XY></p><div class="page"><span>9</span>&nbsp;/&nbsp;<span>10</span></div></div>
             </div>
             <div class="bookPage runPage">
                 <div class="bookWord">
                     <FOUNDER-XY type="articlelist" data="{'columnid':[8001954],'articletype':'all','article_attr':'all','columntype':'self', 'showall':'true', 'start': 9, 'count': 1}"><#list articles as article><div class="box3"><span><a href="${article.url}">${article.title}</a></span><div style="width:34px;height:2px;background-color:#000;position: absolute;top: 52px;"></div><p><a>${article.summary}</a></p></div></#list></FOUNDER-XY>
+                    <div class="btn"></div>
                 </div>
                 <div class="box1"><p><FOUNDER-XY type="columnlist" data="{'columnid':[8001952],'columntype':'self'}"><#list columns as column>${column.name}</#list></FOUNDER-XY></p><div class="page"><span>10</span>&nbsp;/&nbsp;<span>10</span></div></div>
             </div>
@@ -225,6 +237,10 @@
     
 </body>
 <script type="text/javascript">
+    var elements = document.getElementsByTagName('a');
+    for(var i = 0; i < elements.length; i++){
+        elements[i].target = '_blank';
+    }
     function changeWeb(imgObj)
     {
         var divObj = document.getElementById("turnId");
