@@ -87,6 +87,7 @@ img {border:0;}
 <li><FOUNDER-XY type="columnlist" data="{'columnid':[7247533],'columntype':'self'}"><#list columns as column><a href="${column.url!}" class=""  target="_top">CHINA VOICES</a></#list></FOUNDER-XY></li>
 
 <li><FOUNDER-XY type="columnlist" data="{'columnid':[7247539],'columntype':'self'}"><#list columns as column><a href="${column.url!}" class=""  target="_top">INFOGRAPHICS</a></#list></FOUNDER-XY></li>
+<li><FOUNDER-XY type="columnlist" data="{'columnid':[8002866],'columntype':'self'}"><#list columns as column><a href="${column.url!}" class=""  target="_top">VIDEOS</a></#list></FOUNDER-XY></li>
 
 <li><FOUNDER-XY type="columnlist" data="{'columnid':[7247532],'columntype':'self'}"><#list columns as column><a href="${column.url!}" class=""  target="_top">WHITE PAPERS</a></#list></FOUNDER-XY></li>
 
@@ -123,7 +124,7 @@ ${article.summary}
 <li><a   href="${article.url}" >${article.title}</a></li><#else><li><a   href="${article.url}" >${article.title}</a></li>
 </ul></#if></#list></FOUNDER-XY>
 
-<FOUNDER-XY type="articlelist" data="{'columnid':[7248019], 'articletype': 'all', 'article_attr': 'HEADLINE', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><dl>
+<!-- <FOUNDER-XY type="articlelist" data="{'columnid':[7248019], 'articletype': 'all', 'article_attr': 'HEADLINE', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><dl>
 <dt><a   href="${article.url}" ><img src="${article.picBig}"   border=0> </a></dt>
 <dd>
 <h1><a   href="${article.url}" >${article.title}</a></h1>
@@ -137,7 +138,7 @@ ${article.summary}
 
 <FOUNDER-XY type="articlelist" data="{'columnid':[7248019], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 4}"><#list articles as article><#if article_index % 2 == 0><ul>
 <li><a   href="${article.url}" >${article.title}</a></li><#else><li><a   href="${article.url}" >${article.title}</a></li>
-</ul></#if></#list></FOUNDER-XY>
+</ul></#if></#list></FOUNDER-XY> -->
 <FOUNDER-XY type="articlelist" data="{'columnid':[7248018], 'articletype': 'all', 'article_attr': 'HEADLINE', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><dl>
 <dt><a   href="${article.url}" ><img src="${article.picBig}"   border=0> </a></dt>
 <dd>
