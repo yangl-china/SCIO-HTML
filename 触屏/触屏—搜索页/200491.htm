@@ -19,7 +19,7 @@ img { border:0; width: 100%; height: auto;}
 .fl { float:left;}
 .fr { float:right;}
 span.mmmm  a{ color: #6b6b6b;font-size: 1em;}
-h1 {  width: 100%; display: inline-block;font-size: 1.8em;line-height: 1.25em; font-family:Arial; font-weight:bold; color:#0d3175; clear:both;}
+h1 {  width: 100%; display: inline-block;font-size: 1.6em;line-height: 1.25em; font-family:Arial; font-weight:bold; color:#0d3175; clear:both;padding-bottom: 10px;}
 h1 span a {  font-family:Arial; font-weight:normal; color:#000;font-size: 1em; }
 h3{ font-size: 1.2em;line-height: 1.25em;margin: 10px 0;}
 dl { width:100%;  height:auto; overflow:hidden; position: relative;border-top: 1px solid #d1d1d1;padding: 10px 0;}
@@ -49,19 +49,16 @@ dd span.mmmm { border-left: 2px solid #5792fc; display: inline-block; padding-le
 .inputText { border: none; width: 90%; height: 1.8rem;border-bottom-left-radius: 5px; border-top-left-radius: 5px; padding: 0 4%;}
 .inputBtn { background: url(http://images.china.cn/images1/ch/2014world/images/b_1.gif) no-repeat center center; border: none; width: 30px; height: 30px; cursor: pointer; }
 
-.column {width: 100%; background-color: #0d3175;padding: 10px;}
-.column h1 span a{color: #fff;}
-
 .wrap{width: 100%;overflow: hidden;zoom: 1;margin: 0 auto;padding: 10px 2.5%;}
-.main{width: 100%;position: relative;margin-bottom: 10px; overflow:hidden;}
-.main img{width: 100%;}
-.main p{position: absolute;left: 0;bottom: 0;width: 100%;padding:2%;background: url(http://images.china.cn/images1/ch/2017gxb/images/filter_1.png) left no-repeat;}
-.main a{font-size: 1.6em; color: #fff; line-height: 1.25em; font-weight: bold;}
 
 .usual{width: 100%;}
-.usual li{overflow: hidden;width: 100%;;}
-.usual img{float: left;width: 100%;}
-.usual p{font-size: 1em;line-height: 1.25em;}
+.usual li{overflow: hidden;width: 100%; border-bottom: 1px solid #d1d1d1; padding: 10px 0;}
+.usual li p{font-size: 1.2em;line-height: 1.25em;}
+.td {color: #6b6b6b;}
+
+#autopage{margin-top: 10px;text-align: center;}
+#autopage span{margin-right: 5px;}
+#autopage a {margin-right: 5px;}
 
 .footer{width: 100%;}
 .footer a {color: #fff;} 
@@ -127,20 +124,24 @@ dd span.mmmm { border-left: 2px solid #5792fc; display: inline-block; padding-le
         </div>
 </div>
 
-<div class="column"><h1><FOUNDER-XY type="position" data="{}"><#list columns as column><span><a href="${column.urlPad!}" target="_self" class="" >&nbsp;ㄑ&nbsp;${column.name}</a></span></#list></FOUNDER-XY></h1></div>
-
 <div class="wrap">
+<div class="title2">
+<ul>
+<li style="font-size:1em;float:left;font-weight: normal;" id="yInfo"></li>
 
-<div class="main"><FOUNDER-XY type="articlelist" data="{'columnid':[], 'articletype': 'all', 'article_attr': 'HEADLINE', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><a   href="${article.urlPad}"  target="_self"><img src="${article.picBig}"    border="0"> </a>
-<p><a   href="${article.urlPad}"  target="_self">${article.title}</a></p></#list></FOUNDER-XY></div>
-
-<div class="usual"><FOUNDER-XY type="articlelist" data="{'columnid':[], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': '50'}"><#list articles as article><#if article_index == 0><ul>
-</#if><li>
-        <dl><dt><a   href="${article.urlPad}"  target="_self"><img src="${article.picBig}"    border="0"> </a></dt><dd><a   href="${article.urlPad}"  target="_self">${article.title}</a><br><span class="mmmm">${article.subTitle}</span></dd></dl>
-</li><#if article_has_next=false>
+<li style="font-size:1em;float:right;display:none;">Sort by: <a href="javascript:sortby(1);">Relevance</a> | <a href="javascript:sortby(2);"><strong>Date</strong></a></li>
 </ul>
-</#if></#list></FOUNDER-XY></div>
+</div>
+<br>
+<div style="    font-size: 1.4em;line-height: 0px;padding-bottom: 15px;">News &amp; Articles</div>
 
+<div class="usual">
+<ul id="yList">
+<li>&#160;</li>
+</ul>
+</div>
+
+<div width="100%" id="autopage">&#160;</div>
 </div>
 
 <div class='footer'>
@@ -208,6 +209,160 @@ $(function () {
 <script type="text/javascript">
 (function($) {
     $('.usual li:last()').css('border-bottom', '0');
+})(jQuery);
+</script>
+
+<script type="text/javascript">
+(function ($) {
+    var startpage = getQueryString('page') ? parseInt(getQueryString('page')) : 1;
+    var searchText = getQueryString('searchText') ? getQueryString('searchText') : '';
+    var sub = getQueryString('sub');
+    var pageSize = 40;
+    var totalPage = 0;
+    var getUrl = '';
+    if (sub) {
+        getUrl = 'http://search.china.org.cn/hlftiweb/en/jsonfn.jsp?strUrl=english.scio.gov.cn&channel=1&page=' + startpage + '&nItem=' + pageSize + '&sub=' + sub;
+    } else {
+        getUrl = 'http://search.china.org.cn/hlftiweb/en/jsonfn.jsp?strUrl=english.scio.gov.cn&channel=1&page=' + startpage + '&nItem=' + pageSize + '&searchText=' + searchText;
+    }
+
+    $.getScript(getUrl);
+    window.searchRes = function (data) {
+        var temp = [], pageHref = [],
+            len = data.size;
+        totalPage = Math.ceil(len / pageSize);
+        $('#yInfo').html('Results ' + (startpage * pageSize - pageSize + 1) + ' - ' + startpage * pageSize + ' of ' + len);
+        for (var i = 0; i < data.list.length; i++) {
+            temp.push('<li><h3><span class="mmmm">' + data.list[i].sub +'</span></h3><h1><a href="' + data.list[i].url.replace(/http:\/\/www.china.org.cn\/englishscio\//, "http://english.scio.gov.cn/") + '">' + data.list[i].title + '</a></h1><p>' + data.list[i].abstract + '</p></li>');
+        }
+        $('#yList').html(temp.join(''));
+        pageObj();
+        keyHref();
+    };
+
+    function pageObj() {
+        var i, key = '';
+        var pageHref = [];
+        if (sub) {
+            key = 'sub';
+        } else {
+            key = 'searchText';
+        }
+        var txt = getQueryString(key) ? getQueryString(key) : '';
+
+        var pagination_buf = [];
+        // prev
+        pagination_buf.push(startpage > 1 ? '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + (startpage - 1) + '&' + key + '=' + txt + '">Prev</a>' : '<span>Prev</span>');
+        // pagination
+        if (totalPage <= 10) {
+            for (i = 1; i <= totalPage; i++) {
+                pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+            }
+        } else {
+            // total page > 10
+            if (startpage <= 4) {
+                // 1 2 3 4 5 ... 8 9 10 11
+                for (i = 1; i <= 5; i++) {
+                    pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                }
+                pagination_buf.push('<span>...</span>');
+                for (i = totalPage - 2; i <= totalPage; i++) {
+                    pagination_buf.push('<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                }
+            } else if (startpage >= totalPage - 3) {
+                // 1 2 3 ... 7 8 9 10 11
+                for (i = 1; i <= 3; i++) {
+                    pagination_buf.push('<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                }
+                pagination_buf.push('<span>...</span>');
+                for (i = totalPage - 4; i <= totalPage; i++) {
+                    pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                }
+            } else {
+                // 1 2 ... 5 6 7 ... 9 10 11
+                for (i = 1; i <= 2; i++) {
+                    pagination_buf.push('<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                }
+                pagination_buf.push('<span>...</span>');
+                for (i = startpage - 1; i <= startpage + 1; i++) {
+                    pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                }
+                pagination_buf.push('<span>...</span>');
+                for (i = totalPage - 1; i <= totalPage; i++) {
+                    pagination_buf.push('<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                }
+            }
+        }
+        // next
+        pagination_buf.push(startpage < totalPage ? '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + (startpage + 1) + '&' + key + '=' + txt + '">Next</a>' : '<span>Next</span>');
+        $('#autopage').html(pagination_buf.join(''));
+    }
+
+    function sortby(int) {
+        if (int == 1) {
+            window.location.href = location.href + '&strSortBy=1';
+        } else {
+            window.location.href = location.href + '&strSortBy=2';
+        }
+    }
+
+    function _getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+
+    function getQueryString(name) {
+        return getQueryParameters()[name];
+    }
+
+    function getQueryParameters(str) {
+        var i, len, pair, params = {},
+            search_string = (str || document.location.search).replace(/(^\?)/, ''),
+            search_split = search_string.split('&');
+        for (i = 0, len = search_split.length; i < len; i++) {
+            pair = search_split[i].split('=');
+            params[pair[0]] = window.decodeURIComponent(pair[1]);
+        }
+        return params;
+    }
+
+    function keyHref() {
+        var arr = {
+            "White Paper": 'w1',
+            "Leaders": 'w2',
+            "SCIO News": 'w3',
+            "Public Diplomacy": 'w4',
+            "Int'l Cooperation": 'w5',
+            "Economy": 'w6',
+            "Sci-Tech": 'w7',
+            "Press Conference": 'w8',
+            "Policy Briefing": 'w9',
+            "Culture": 'w10',
+            "Policy": 'w11',
+            "CPC": 'w12',
+            "National Defense": 'w13',
+            "Society": 'w14',
+            "Around China": 'w15',
+            "Belt & Road": 'w16',
+            "Education": 'w17',
+            "Think Tank": 'w18',
+            "Politics": 'w19',
+            "Int'l Exchange": 'w20',
+            "Diplomacy": 'w21',
+            "Human Rights": 'w22',
+            "Environment": 'w23',
+            "Media Cooperation": 'w24',
+            "International Cooperation": 'w25',
+            "International Exchanges": 'w26',
+            "Aid": 'w27',
+            "Two Sessions 2018": 'w28'
+        };
+        $('.mmmm').each(function () {
+            var curTitle = $.trim($(this).text());
+            $(this).addClass(arr[curTitle]).html('<a href="?strUrl=english.scio.gov.cn&channel=1&sub=' + curTitle + '" target="_top">' + curTitle + '</a>')
+        });
+    }
 })(jQuery);
 </script>
 

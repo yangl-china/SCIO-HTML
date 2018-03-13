@@ -11,17 +11,16 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <style type="text/css">
 * { margin: 0px; padding: 0px; box-sizing: border-box; }
-body {font-family: Arial; font-size:10px; color:#000; line-height:10px;-webkit-touch-callout: none; -webkit-text-size-adjust: none; min-height:550px;_height:550px;width:100%;background-color: #fff;}
-a { text-decoration: none; color:#000000;}
+body {font-family: Arial; font-size:10px; color:#000; line-height:10px;-webkit-touch-callout: none; -webkit-text-size-adjust: none; min-height:550px;_height:550px;width:100%;background-color: #e7e7e7;}
+a { text-decoration: none; color: #000; }
 a:hover { color: #333; text-decoration: none; }
 ul, li { list-style-type: none; display: inline-block;  width: 100%; }
 img { border:0; width: 100%; height: auto;}
 .fl { float:left;}
 .fr { float:right;}
-span.mmmm  a{ color: #6b6b6b;font-size: 1em;}
-h1 {  width: 100%; display: inline-block;font-size: 1.8em;line-height: 1.25em; font-family:Arial; font-weight:bold; color:#0d3175; clear:both;}
-h1 span a {  font-family:Arial; font-weight:normal; color:#000;font-size: 1em; }
-h3{ font-size: 1.2em;line-height: 1.25em;margin: 10px 0;}
+span.mmmm  a{ color: #6b6b6b;    font-size: 1em;}
+h1 {  width: 100%; display: inline-block;font-size: 1.8em;line-height: 1.25em; font-family:Arial; font-weight:bold; color:#0d3175;clear:both;}
+h1 span a {  font-family:Arial; font-weight:normal; color:#000;font-size: 1em;  }
 dl { width:100%;  height:auto; overflow:hidden; position: relative;border-top: 1px solid #d1d1d1;padding: 10px 0;}
 dt { width:33%; height:auto; overflow:hidden;float: left; }
 dt img { width:100%; height:auto;}
@@ -50,18 +49,35 @@ dd span.mmmm { border-left: 2px solid #5792fc; display: inline-block; padding-le
 .inputBtn { background: url(http://images.china.cn/images1/ch/2014world/images/b_1.gif) no-repeat center center; border: none; width: 30px; height: 30px; cursor: pointer; }
 
 .column {width: 100%; background-color: #0d3175;padding: 10px;}
-.column h1 span a{color: #fff;}
+.column h1 span{color: #fff;  text-align: center;  display: block;}
+.column h1 a{color: #fff;float: left;}
 
-.wrap{width: 100%;overflow: hidden;zoom: 1;margin: 0 auto;padding: 10px 2.5%;}
+.wrap{width: 100%;height: 1%;overflow: hidden;zoom: 1;padding: 0 2.5%;margin-top: 10px;background-color:#fff; }
+
+.wrap h6 { clear: both; color: #0d3175;  padding: 10px 0;  width: 100%;  display: inline-block; font-size: 1.8em; line-height: 1.25em; font-family: Arial; font-weight: bold;}
+.wrap h6 span a {  color:#0d3175; }
+.wrap h6 span { background-color:#FFFFFF; float: right;}
+
 .main{width: 100%;position: relative;margin-bottom: 10px; overflow:hidden;}
 .main img{width: 100%;}
-.main p{position: absolute;left: 0;bottom: 0;width: 100%;padding:2%;background: url(http://images.china.cn/images1/ch/2017gxb/images/filter_1.png) left no-repeat;}
+.main p{position: absolute;left: 0;bottom: 0px;width: 100%;padding: 10px; background: url(http://images.china.cn/images1/ch/2017gxb/images/filter_1.png) left no-repeat;}
 .main a{font-size: 1.6em; color: #fff; line-height: 1.25em; font-weight: bold;}
 
-.usual{width: 100%;}
-.usual li{overflow: hidden;width: 100%;;}
-.usual img{float: left;width: 100%;}
-.usual p{font-size: 1em;line-height: 1.25em;}
+.usual{width: 100%; overflow: hidden;}
+.usual li{width:50%;  float:left; height: 173px;  position: relative;}
+.usual li:nth-child(1){padding-right:5px;}
+.usual li:nth-child(2){padding-left:5px;}
+.usual li:nth-child(3){padding-right:5px;}
+.usual li:nth-child(4){padding-left:5px;}
+.usual li:nth-child(5){padding-right:5px;}
+.usual li:nth-child(6){padding-left:5px;}
+.usual li span.mmmm { border-left: 3px solid #5792fc; display: inline-block; padding-left: 4px; }
+.usual img{width: 100%;}
+
+.usual1{width: 100%;}
+
+.box2 li { padding:10px; border-bottom: solid 1px #e5e5e5;font-size: 1.4em;  line-height: 1.25em;}
+.box2 li:nth-child(1){border-top: solid 1px #e5e5e5;}
 
 .footer{width: 100%;}
 .footer a {color: #fff;} 
@@ -107,7 +123,7 @@ dd span.mmmm { border-left: 2px solid #5792fc; display: inline-block; padding-le
         <div class="listtop"><div style="display:inline-block;width:15%;"><a href="http://www.scio.gov.cn"><img src="http://images.china.cn/images1/en/sciophone/chinese.png"/></a></div><span>CHINA SCIO</span><div onclick="closelist()" style="display:inline-block;width:10%;"><img src="http://images.china.cn/images1/en/sciophone/close.png" style="width: 60%;"></div></div>
         <div style="clear:both;  overflow:hidden;"><form id="formid" action="http://english.scio.gov.cn/m/search.htm" method="get" target="_top" class="militaryForm"><input type="text" name="searchText" class="inputText" placeholder="Search" /><img src="http://images.china.cn/images1/ch/2014world/images/b_1.gif"  onclick="checkUser();" style="cursor:pointer;width: 10%; float: right; border-bottom-right-radius: 5px;border-top-right-radius: 5px;" /><input name="strUrl" type="hidden" value="englishscio" /></form></div>
         <ul>
-                <li><a href="#" style="color:#fff;display:inline-block;margin:0 auto;">HOME</a>  </li>
+                <li><FOUNDER-XY type="columnlist" data="{'columnid':[7247529],'columntype':'self'}"><#list columns as column><a href="${column.urlPad!}" class=""  target="_top">HOME</a></#list></FOUNDER-XY></li>
                 <li><FOUNDER-XY type="columnlist" data="{'columnid':[7247536],'columntype':'self'}"><#list columns as column><a href="${column.urlPad!}" class=""  target="_top">TOP NEWS</a></#list></FOUNDER-XY></li>
                 <li><FOUNDER-XY type="columnlist" data="{'columnid':[7247535],'columntype':'self'}"><#list columns as column><a href="${column.urlPad!}" class=""  target="_top">PRESS ROOM</a></#list></FOUNDER-XY></li>
                 <li><FOUNDER-XY type="columnlist" data="{'columnid':[7252795],'columntype':'self'}"><#list columns as column><a href="${column.urlPad!}" class=""  target="_top">SCIO NEWS</a></#list></FOUNDER-XY></li>
@@ -126,21 +142,38 @@ dd span.mmmm { border-left: 2px solid #5792fc; display: inline-block; padding-le
         <div class="listbottom fr"><a href="https://www.facebook.com/chinascio" target="_blank"><img src="http://images.china.cn/images1/en/sciophone/facebook.png"  border="0" /></a> <a href="https://twitter.com/chinascio" target="_blank"><img src="http://images.china.cn/images1/en/sciophone/twitter.png"  border="0" /></a> <a href="https://www.youtube.com/chinascio" target="_blank"><img src="http://images.china.cn/images1/en/sciophone/youtube.png"  border="0" /></a> <a href="http://plus.google.com/+ChinaSCIO" target="_blank"><img src="http://images.china.cn/images1/en/sciophone/google+.png"  border="0" /></a></div>       
         </div>
 </div>
-
-<div class="column"><h1><FOUNDER-XY type="position" data="{}"><#list columns as column><span><a href="${column.urlPad!}" target="_self" class="" >&nbsp;ㄑ&nbsp;${column.name}</a></span></#list></FOUNDER-XY></h1></div>
+<div class="column"><h1><FOUNDER-XY type="columnlist" data="{'columnid':[7247529],'columntype':'self'}"><#list columns as column><a href="${column.urlPad!}" class=""  target="_top">ㄑ</a></#list></FOUNDER-XY> <span> BELT AND ROAD</span></h1></div>
 
 <div class="wrap">
+<h6>NEWS<span><FOUNDER-XY type="columnlist" data="{'columnid':[7247627],'columntype':'self'}"><#list columns as column><a href="${column.urlPad!}" class=""  target="_self">+</a></#list></FOUNDER-XY></span></h6>
 
-<div class="main"><FOUNDER-XY type="articlelist" data="{'columnid':[], 'articletype': 'all', 'article_attr': 'HEADLINE', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><a   href="${article.urlPad}"  target="_self"><img src="${article.picBig}"    border="0"> </a>
+<div class="main"><FOUNDER-XY type="articlelist" data="{'columnid':[7247627], 'articletype': 'all', 'article_attr': 'PIC', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><a   href="${article.urlPad}"  target="_self"><img src="${article.picBig}"    border="0"> </a>
 <p><a   href="${article.urlPad}"  target="_self">${article.title}</a></p></#list></FOUNDER-XY></div>
 
-<div class="usual"><FOUNDER-XY type="articlelist" data="{'columnid':[], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': '50'}"><#list articles as article><#if article_index == 0><ul>
-</#if><li>
-        <dl><dt><a   href="${article.urlPad}"  target="_self"><img src="${article.picBig}"    border="0"> </a></dt><dd><a   href="${article.urlPad}"  target="_self">${article.title}</a><br><span class="mmmm">${article.subTitle}</span></dd></dl>
-</li><#if article_has_next=false>
-</ul>
+<div class="usual">
+
+<FOUNDER-XY type="articlelist" data="{'columnid':[7247627], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 6}"><ul style="clear:both;"><#list articles as article>
+<li>
+<p><a   href="${article.urlPad}"  target="_self"><img src="${article.picBig}"    border="0"> </a></p>
+<p style="padding:10px 0;"><a   href="${article.urlPad}"  target="_self">${article.title}</a></p><p style="padding:10px 0;position: absolute;bottom: 0;"><span class="mmmm">${article.subTitle}</span></p>
+</li>
+</#list></ul></FOUNDER-XY>
+</div>
+</div>
+<div class="wrap">
+<div class="usual1">
+<h6>OPINION<span><FOUNDER-XY type="columnlist" data="{'columnid':[7247628],'columntype':'self'}"><#list columns as column><a href="${column.urlPad!}" class=""  target="_self"> +</a></#list></FOUNDER-XY></span></h6>
+<FOUNDER-XY type="articlelist" data="{'columnid':[7247628], 'articletype': 'all', 'article_attr': 'PIC', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 2}"><#list articles as article><#if article_index == 0>
+</#if><dl><dt>
+<a   href="${article.urlPad}"  target="_self"><img src="${article.picBig}"    border="0"> </a></dt>
+<dd><a   href="${article.urlPad}"  target="_self">${article.title}</a><br>
+<span class="mmmm">${article.subTitle}</span></dd></dl>
+<#if article_has_next=false>
 </#if></#list></FOUNDER-XY></div>
 
+<div class="box2"><FOUNDER-XY type="articlelist" data="{'columnid':[7247628], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 5}"><#list articles as article><#if article_index == 0><ul>
+</#if><li><a   href="${article.urlPad}" >${article.title}</a></li><#if article_has_next=false>
+</ul></#if></#list></FOUNDER-XY></div>
 </div>
 
 <div class='footer'>
