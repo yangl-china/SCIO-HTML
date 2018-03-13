@@ -26,7 +26,8 @@
 		"Media Cooperation": 'w24',
 		"International Cooperation": 'w25',
         "International Exchanges": 'w26',
-        "Aid": 'w27'
+        "Aid": 'w27',
+        "Two Sessions 2018": 'w28'
     };
     $('.mmmm').each(function () {
         var curTitle = $.trim($(this).text());

@@ -73,3 +73,6 @@
 .w27 { color: #956f2e; font-size:14px; padding:0 4px; line-height:18px; font-weight:bold; font-family:Georgia; font-style:italic;}
 .w27 a{ color: #956f2e; font-size:14px; padding:0 4px; line-height:18px; font-weight:bold; font-family:Georgia; font-style:italic;}
 .w27:hover { color: #fff; background: #956f2e; font-size:14px; padding:0 3px; line-height:18px; font-weight:bold;}
+.w28 { color: red; font-size:12px; padding:0 4px; line-height:18px; font-weight:bold; font-family:Georgia; font-style:italic;}
+.w28 a{ color: red; font-size:12px; padding:0 4px; line-height:18px; font-weight:bold; font-family:Georgia; font-style:italic;}
+.w28:hover { color: #fff; background: red; font-size:12px; padding:0 3px; line-height:18px; font-weight:bold;}

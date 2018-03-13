@@ -6,9 +6,9 @@
     var totalPage = 0;
     var getUrl = '';
     if (sub) {
-        getUrl = 'http://search.china.org.cn/hlftiweb/en/jsonfn.jsp?strUrl=englishscio&page=' + startpage + '&nItem=' + pageSize + '&sub=' + sub;
+        getUrl = 'http://search.china.org.cn/hlftiweb/en/jsonfn.jsp?strUrl=english.scio.gov.cn&channel=1&page=' + startpage + '&nItem=' + pageSize + '&sub=' + sub;
     } else {
-        getUrl = 'http://search.china.org.cn/hlftiweb/en/jsonfn.jsp?strUrl=englishscio&page=' + startpage + '&nItem=' + pageSize + '&searchText=' + searchText;
+        getUrl = 'http://search.china.org.cn/hlftiweb/en/jsonfn.jsp?strUrl=english.scio.gov.cn&channel=1&page=' + startpage + '&nItem=' + pageSize + '&searchText=' + searchText;
     }
 
     $.getScript(getUrl);
@@ -19,7 +19,7 @@
         totalPage = Math.ceil(len / pageSize);
         $('#yInfo').html('Results ' + (startpage * pageSize - pageSize + 1) + ' - ' + startpage * pageSize + ' of ' + len);
         for (var i = 0; i < data.list.length; i++) {
-            temp.push('<li><h3><span class="mmmm">' + data.list[i].sub + '</span>' + data.list[i].date + '</h3><h1><a href="' + data.list[i].url.replace(/http:\/\/www.china.org.cn\/englishscio\//, "http://english.scio.gov.cn/") + '">' + data.list[i].title + '</a></h1><p>' + data.list[i].text + '</p></li>');
+            temp.push('<li><h3><span class="mmmm">' + data.list[i].sub + '</span>' + data.list[i].date + '</h3><h1><a href="' + data.list[i].url.replace(/http:\/\/www.china.org.cn\/englishscio\//, "http://english.scio.gov.cn/") + '">' + data.list[i].title + '</a></h1><p>' + data.list[i].abstract + '</p></li>');
         }
         $('#yList').html(temp.join(''));
         pageObj();
@@ -38,49 +38,49 @@
 
         var pagination_buf = [];
         // prev
-        pagination_buf.push(startpage > 1 ? '<a href="?strUrl=englishscio&page=' + (startpage - 1) + '&' + key + '=' + txt + '">Prev</a>' : '<span>Prev</span>');
+        pagination_buf.push(startpage > 1 ? '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + (startpage - 1) + '&' + key + '=' + txt + '">Prev</a>' : '<span>Prev</span>');
         // pagination
         if (totalPage <= 10) {
             for (i = 1; i <= totalPage; i++) {
-                pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=englishscio&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
             }
         } else {
             // total page > 10
             if (startpage <= 4) {
                 // 1 2 3 4 5 ... 8 9 10 11
                 for (i = 1; i <= 5; i++) {
-                    pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=englishscio&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                    pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
                 }
                 pagination_buf.push('<span>...</span>');
                 for (i = totalPage - 2; i <= totalPage; i++) {
-                    pagination_buf.push('<a href="?strUrl=englishscio&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                    pagination_buf.push('<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
                 }
             } else if (startpage >= totalPage - 3) {
                 // 1 2 3 ... 7 8 9 10 11
                 for (i = 1; i <= 3; i++) {
-                    pagination_buf.push('<a href="?strUrl=englishscio&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                    pagination_buf.push('<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
                 }
                 pagination_buf.push('<span>...</span>');
                 for (i = totalPage - 4; i <= totalPage; i++) {
-                    pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=englishscio&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                    pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
                 }
             } else {
                 // 1 2 ... 5 6 7 ... 9 10 11
                 for (i = 1; i <= 2; i++) {
-                    pagination_buf.push('<a href="?strUrl=englishscio&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                    pagination_buf.push('<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
                 }
                 pagination_buf.push('<span>...</span>');
                 for (i = startpage - 1; i <= startpage + 1; i++) {
-                    pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=englishscio&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                    pagination_buf.push(i == startpage ? '<span>' + i + '</span>' : '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
                 }
                 pagination_buf.push('<span>...</span>');
                 for (i = totalPage - 1; i <= totalPage; i++) {
-                    pagination_buf.push('<a href="?strUrl=englishscio&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
+                    pagination_buf.push('<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + i + '&' + key + '=' + txt + '">' + i + '</a>');
                 }
             }
         }
         // next
-        pagination_buf.push(startpage < totalPage ? '<a href="?strUrl=englishscio&page=' + (startpage + 1) + '&' + key + '=' + txt + '">Next</a>' : '<span>Next</span>');
+        pagination_buf.push(startpage < totalPage ? '<a href="?strUrl=english.scio.gov.cn&channel=1&page=' + (startpage + 1) + '&' + key + '=' + txt + '">Next</a>' : '<span>Next</span>');
         $('#autopage').html(pagination_buf.join(''));
     }
 
@@ -126,11 +126,12 @@
             "Media Cooperation": 'w24',
 			"International Cooperation": 'w25',
             "International Exchanges": 'w26',
-            "Aid": 'w27'
+            "Aid": 'w27',
+            "Two Sessions 2018": 'w28'
         };
         $('.mmmm').each(function () {
             var curTitle = $.trim($(this).text());
-            $(this).addClass(arr[curTitle]).html('<a href="?strUrl=englishscio&sub=' + curTitle + '" target="_top">' + curTitle + '</a>')
+            $(this).addClass(arr[curTitle]).html('<a href="?strUrl=english.scio.gov.cn&channel=1&sub=' + curTitle + '" target="_top">' + curTitle + '</a>')
         });
     }
 })(jQuery);
