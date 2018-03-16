@@ -55,9 +55,14 @@ dd span.mmmm { border-left: 2px solid #5792fc; display: inline-block; padding-le
 .wrap{width: 100%;overflow: hidden;zoom: 1;margin: 0 auto;padding: 10px 2.5%;}
 
 .usual{width: 100%;}
-.usual li{overflow: hidden;width: 100%;;}
+.usual li{overflow: hidden;width: 100%;border-top: 1px solid #d1d1d1;padding: 10px 0;}
+.usual li a {font-size: 1.6em;line-height: 1.25em;}
 .usual img{float: left;width: 100%;}
 .usual p{font-size: 1em;line-height: 1.25em;}
+
+#autopage { clear: both; padding-top:20px;}
+#autopage a { color: #fff; background: url(http://images.china.cn/images1/ch/2017gxb/images/170609-2.jpg) left top repeat-x; font-size: 18px;line-height: 32px; display: inline-block; width: 20px;margin-bottom: 5px;}
+#autopage span { color: #FFF; background: url(http://images.china.cn/images1/ch/2017gxb/images/170609-1.jpg) left top repeat-x; font-size: 18px;line-height: 32px; display: inline-block; width: 20px;margin-bottom: 5px;}
 
 .footer{width: 100%;}
 .footer a {color: #fff;} 
@@ -129,7 +134,7 @@ dd span.mmmm { border-left: 2px solid #5792fc; display: inline-block; padding-le
 
 <div class="usual"><FOUNDER-XY type="articlelistpage" data="{'columnid':[], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 50}"><#list articles as article><#if article_index == 0><ul>
 </#if><li>
-        <dl><dt><a   href="${article.urlPad}"  target="_self"><img src="${article.picBig}"    border="0"> </a></dt><dd><a   href="${article.urlPad}"  target="_self">${article.title}</a><br><span class="mmmm">${article.subTitle}</span></dd></dl>
+        <a   href="${article.urlPad}"  target="_self">${article.title}</a>
 </li><#if article_has_next=false>
 </ul>
 </#if></#list></FOUNDER-XY></div>
