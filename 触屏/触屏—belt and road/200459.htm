@@ -12,6 +12,12 @@
 <style type="text/css">
 * { margin: 0px; padding: 0px; box-sizing: border-box; }
 body {font-family: Arial; font-size:10px; color:#000; line-height:10px;-webkit-touch-callout: none; -webkit-text-size-adjust: none; min-height:550px;_height:550px;width:100%;background-color: #e7e7e7;}
+@media screen and (min-width:550px) and (max-width:1024px) {
+        body{font-size: 15px;line-height: 15px;}        
+}
+@media screen and (min-width:1024px){
+        body{font-size: 20px;line-height: 20px;}        
+}
 a { text-decoration: none; color: #000; }
 a:hover { color: #333; text-decoration: none; }
 ul, li { list-style-type: none; display: inline-block;  width: 100%; }
@@ -64,7 +70,7 @@ dd span.mmmm { border-left: 2px solid #5792fc; display: inline-block; padding-le
 .main a{font-size: 1.6em; color: #fff; line-height: 1.25em; font-weight: bold;}
 
 .usual{width: 100%; overflow: hidden;}
-.usual li{width:50%;  float:left; height: 173px;  position: relative;}
+.usual li{width:50%;  float:left;position: relative;}
 .usual li:nth-child(1){padding-right:5px;}
 .usual li:nth-child(2){padding-left:5px;}
 .usual li:nth-child(3){padding-right:5px;}
@@ -155,7 +161,7 @@ dd span.mmmm { border-left: 2px solid #5792fc; display: inline-block; padding-le
 <FOUNDER-XY type="articlelist" data="{'columnid':[7247627], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 6}"><ul style="clear:both;"><#list articles as article>
 <li>
 <p><a   href="${article.urlPad}"  target="_self"><img src="${article.picBig}"    border="0"> </a></p>
-<p style="padding:10px 0;"><a   href="${article.urlPad}"  target="_self">${article.title}</a></p><p style="padding:10px 0;position: absolute;bottom: 0;"><span class="mmmm">${article.subTitle}</span></p>
+<p style="padding:10px 0;"><a   href="${article.urlPad}"  target="_self">${article.title}</a></p><p style="padding:10px 0;"><span class="mmmm">${article.subTitle}</span></p>
 </li>
 </#list></ul></FOUNDER-XY>
 </div>

@@ -17,6 +17,12 @@
 <style type="text/css">
 * { margin: 0px; padding: 0px; box-sizing: border-box; }
 body {font-family: Arial; font-size:10px; color:#000; line-height:10px;-webkit-touch-callout: none; -webkit-text-size-adjust: none; min-height:550px;_height:550px;width:100%;background-color: #fff;}
+@media screen and (min-width:550px) and (max-width:1024px) {
+        body{font-size: 15px;line-height: 15px;}        
+}
+@media screen and (min-width:1024px){
+        body{font-size: 20px;line-height: 20px;}        
+}
 a { text-decoration: none; color: #000; }
 a:hover { color: #333; text-decoration: none; }
 ul, li { list-style-type: none; display: inline-block;  width: 100%; }
@@ -81,6 +87,7 @@ dd span.mmmm { border-left: 2px solid #5792fc; display: inline-block; padding-le
 #autopage { clear: both; padding-top:20px;}
 #autopage a { color: #fff; background: url(http://images.china.cn/images1/ch/2017gxb/images/170609-2.jpg) left top repeat-x; font-size: 18px;line-height: 32px; display: inline-block; width: 20px;margin-bottom: 5px;}
 #autopage span { color: #FFF; background: url(http://images.china.cn/images1/ch/2017gxb/images/170609-1.jpg) left top repeat-x; font-size: 18px;line-height: 32px; display: inline-block; width: 20px;margin-bottom: 5px;}
+.ad{width: 600px;border: 3px solid #1247a5; padding: 10px 0;}
 
 .footer{width: 100%;}
 .footer a {color: #fff;} 
@@ -247,6 +254,9 @@ wd_paramtracker("_wdxid=000000000000000000000000000000000000000000")
     $('.cp p:first()').addClass('cp_f');
 })(jQuery);
 
+</script>
+<script type="text/javascript">
+if (!!window.ActiveXObject || "ActiveXObject" in window){}else{$("audio").addClass("ad");}
 </script>
 </body>
 </html>
