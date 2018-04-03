@@ -240,6 +240,19 @@ window.onload = menu;
   </script>
 <script type="text/javascript" src="http://images.china.cn/images1/en/gxb/index.js">
 </script>
+<script type="text/javascript">
+    (function ($) {
+        var wTop = $('#videoarea').offset().top;
+        $(window).scroll(function () {
+            var t = $(document).scrollTop();
+            if (t >= wTop) {
+                $('#videoarea').css({ 'position': 'fixed', 'z-index': '99999','bottom': '60px','right': '100px','width':'300px','transform': 'scale(.5,.5)'});
+            } else {
+                $('#videoarea').css({ 'position': 'static','transform': 'scale(1,1)','width':'600px'});
+            }
+        });         
+    })(jQuery);
+</script>
 </body>
 </html>
 

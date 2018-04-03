@@ -15,7 +15,12 @@
     .clear::after{content: "";display: block;height: 0px;clear: both;visibility: hidden;}
     .response-img{display: block;max-width: 100%;}
     .text-overflow{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
-    body{width: 100%;max-width: 1920px;min-width: 1200px;background-color: #222222;background: url(http://images.china.cn/images1/en/gxb/20171211/background.jpg) repeat-x top center;}
+    body{width: 100%;background-color: #222222;background: url(http://images.china.cn/images1/en/gxb/20171211/background.jpg) repeat-x top center;}
+    @media screen and (max-width: 1024px) {
+        body{
+            background: url(http://images.china.cn/images1/en/gxb/20171211/background-shipei.jpg) repeat-x top center;
+        }
+    }
     #knowledge{width: 100%;height:100%;position: relative;padding: 40px 0;background-size: 100% 100%;}
     .bookBox{width: 973px;height: 675px;position: relative;margin: 70px auto;-webkit-perspective-origin: 50% 60%;perspective-origin: 50% 60%; -webkit-perspective: 1500px;perspective: 1500px;}
     .bookBox:hover .lastBtn{display: block;}

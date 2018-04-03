@@ -530,15 +530,19 @@ $(function(){
     $(".vd:first").addClass("show");
 })
 </script>
-<!-- <script type="text/javascript">
-        (function ($) {
-            setTimeout(function(){
-                $('#chunjieBox').animate({'height': 0},function(){
-                    $(this).hide();
-                });
-            },3000);
-        })(jQuery);
-    </script> -->
+<script type="text/javascript">
+    (function ($) {
+        var wTop = $('.newbox1').offset().top;
+        $(window).scroll(function () {
+            var t = $(document).scrollTop();
+            if (t >= wTop) {
+                $('.newbox1').css({ 'position': 'fixed', 'z-index': '99999','bottom': '60px','right': '100px','width':'300px','transform': 'scale(.5,.5)'});
+            } else {
+                $('.newbox1').css({ 'position': 'static','transform': 'scale(1,1)','width':'594px'});
+            }
+        });         
+    })(jQuery);
+</script>
 
 </body>
 </html>
