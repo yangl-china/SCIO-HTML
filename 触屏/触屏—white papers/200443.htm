@@ -184,6 +184,8 @@ dd span.mmmm { border-left: 2px solid #5792fc; display: inline-block; padding-le
         Registration Number: 14055996</div>
 </div>
 </div>
+<div class="topbtn" style=" display: none;position: fixed;width: 32px;bottom: 46px;right: 10px;cursor: pointer;z-index: 100000;"><img style="width: 100%;" src="http://images.china.cn/images1/en/sciophone/totop.png" /></div>
+<div class="pcbtn" style="   position: fixed; width: 32px; bottom: 10px; right: 10px; cursor: pointer; z-index: 100000; "><img style="width: 100%;" src="http://images.china.cn/images1/en/sciophone/pcchange.png" /></div>
 
 <div style="display:none;">
 <script type="text/javascript">
@@ -209,6 +211,22 @@ $(function () {
         $('.main').hide();
     };
 })
+
+var BTop = ($('.topbtn').offset().top)+78;
+$(window).scroll(function () {
+        var t = $(document).scrollTop();       
+        if (t > BTop) {
+                $('.topbtn').css({ 'display': 'block' });
+        } else {
+                $('.topbtn').css({ 'display': 'none'});
+        }
+});
+$(".topbtn").click(function() {
+  $("html,body").animate({scrollTop:0}, 500);
+}); 
+$(".pcbtn").click(function(){   
+    window.location.href="http://english.scio.gov.cn/index.htm?word=pc";  
+});
 </script>
 
 <script type="text/javascript">
