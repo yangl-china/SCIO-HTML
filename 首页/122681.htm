@@ -155,6 +155,15 @@ img:hover { transform: scale(1.1); }
 .video2 li:hover ,.video2 li.hover {  transition:transform .5s,background .8s; -moz-transition:transform .5s,background .8s; -webkit-transition:transform .5s,background .8s; -o-transition:transform .5s,background .8s; transform:translate(0,0); -moz-transform:translate(0,0); -webkit-transform: translate(0,0); background:#e1e1e1;}
 .video2 li p{padding: 0px 10px 0px 10px;} 
 .video2 li p a {display: table-cell; vertical-align: middle; height: 96px; text-decoration:none;}
+#featured{ margin-bottom:10px; width:250px; height:164px; cursor:pointer; position: relative; overflow:hidden;}
+#featured .featured_left{ width:48px; height:52px; position: absolute; top:58px; left:0; opacity: .3; filter:alpha(opacity=30);}
+#featured .featured_right{ width:48px; height:52px; position: absolute; top:58px; right:-23px; opacity: .3;  filter:alpha(opacity=30);}
+#featured .featured_left img{ width:50%;}
+#featured .featured_right img{ width:50%;}
+#featured .featured_left:hover,#featured .featured_right:hover{ opacity: .7;  filter:alpha(opacity=70);}
+#featured .featured_img{ position: absolute; display:none;}
+#featured .featuredshow{ display: block;}
+#featured img:hover { transform: scale(1); }
 /* #chunjieBox { overflow: hidden; margin: 0px auto;box-shadow: 10px 10px 40px rgba(0,0,0,0.4);;    height: 603px; }
 #chunjieBox img:hover{ transform: scale(1); } */
 </style>
@@ -315,7 +324,7 @@ img:hover { transform: scale(1.1); }
 </div>
 <div class="newbox">
 <h1><span><FOUNDER-XY type="columnlist" data="{'columnid':[7247535],'columntype':'self'}"><#list columns as column><a href="${column.url!}" class=""  target="_self">PRESS ROOM >></a></#list></FOUNDER-XY></span></h1>
-<div class="newbox1" style="height:330px; margin-bottom:30px;"><iframe id="sp" src="http://english.scio.gov.cn/node_7249683.htm" width="594" height="330" scrolling="no" marginheight="0" frameborder="0"></iframe></div>
+<div class="newbox1" style="height:330px; margin-bottom:30px;"><div class="btnClose" onclick="closebtn()" style="font-size: 30px;font-weight: bold;color: #000000;font-family: 宋体,serif;width:594px;text-align: right;display:none;cursor: pointer;" title="关闭窗口">×</div><iframe id="sp" src="http://english.scio.gov.cn/node_7249683.htm" width="594" height="330" scrolling="no" marginheight="0" frameborder="0"></iframe></div>
 <div class="newbox2"><FOUNDER-XY type="articlelist" data="{'columnid':[7247651], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><dl>
     <dt><a   href="${article.url}" ><img src="${article.picBig}"   border=0> </a></dt>
     <dd><span class="mmmm" style="margin-bottom:3px;">${article.subTitle}</span><br><a   href="${article.url}"  class="lljj">${article.title}</a></dd>
@@ -328,7 +337,7 @@ img:hover { transform: scale(1.1); }
     <dd><span class="mmmm" style="margin-bottom:3px;">${article.subTitle}</span><br><a   href="${article.url}"  class="lljj">${article.title}</a></dd>
     </dl></#list></FOUNDER-XY>
 <ul>
-<li style="width:394px;" class="fl"><FOUNDER-XY type="columnlist" data="{'columnid':[7248352],'columntype':'self'}"><#list columns as column><a href="${column.url!}" class=""  target="_self">Spokesperson Directory</a></#list></FOUNDER-XY></li>
+<li style="width:394px;" class="fl"><FOUNDER-XY type="articlelist" data="{'columnid':[7248352], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><a href="${article.url}" >Spokesperson Directory</a></#list></FOUNDER-XY></li>
 <li style="width:192px;" class="fr"><FOUNDER-XY type="columnlist" data="{'columnid':[7248351],'columntype':'self'}"><#list columns as column><a href="${column.url!}" class=""  target="_self">Notice</a></#list></FOUNDER-XY>
 </li>
 </ul>
@@ -369,16 +378,25 @@ img:hover { transform: scale(1.1); }
                     <p><a   href="${article.url}" >${article.title}</a></p>
                 </li><#if article_has_next=false>
             </ul></#if></#list></FOUNDER-XY>
+
 <h1 style="margin-top: 20px;"><span><FOUNDER-XY type="columnlist" data="{'columnid':[7247538],'columntype':'self'}"><#list columns as column><a href="${column.url!}" class=""  target="_self">FEATURED</a></#list></FOUNDER-XY></span></h1>
-<div style="margin-bottom:24px; width:250px; height:164px; overflow:hidden;"><FOUNDER-XY type="articlelist" data="{'columnid':[7247649], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><a   href="${article.url}" ><img src="${article.picBig}"   border=0 width="250" height="164"> </a></#list></FOUNDER-XY></div>
-<div style="margin-bottom:10px; width:250px; height:164px; overflow:hidden;"><FOUNDER-XY type="articlelist" data="{'columnid':[7247649], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 1, 'count': 1}"><#list articles as article><a   href="${article.url}"  target="_self"><img src="${article.picBig}"   border=0 width="250" height="164"> </a></#list></FOUNDER-XY></div>
+
+<div id="featured"><FOUNDER-XY type="articlelist" data="{'columnid':[7247649], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 5}"><#list articles as article><div class="featured_img">
+        <a   href="${article.url}" ><img src="${article.picBig}"   border=0 width="250" height="164"></a>
+    </div></#list></FOUNDER-XY>
+<div class="featured_list" style="display:none;"><ul><li class="hover">&#160;</li><li>&#160;</li><li>&#160;</li><li>&#160;</li><li>&#160;</li></ul></div>
+<div class="featured_left"><img src="http://english.scio.gov.cn/122681.files/left.png" alt="" /></div>
+<div class="featured_right"><img src="http://english.scio.gov.cn/122681.files/right.png" alt="" /></div>
+</div>
+
 <div style="clear:both;">
 <h1><span><FOUNDER-XY type="columnlist" data="{'columnid':[7247634],'columntype':'self'}"><#list columns as column><a href="${column.url!}" class=""  target="_self">CHINA FACTS</a></#list></FOUNDER-XY></span></h1>
 </div>
 <div style="margin-bottom:20px; width:250px; height:164px; overflow:hidden;"><FOUNDER-XY type="articlelist" data="{'columnid':[7247647], 'articletype': 'all', 'article_attr': 'all', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><a   href="${article.url}" ><img src="${article.picBig}"   border=0 width="250" height="164"> </a></#list></FOUNDER-XY></div>
 <h1><span><FOUNDER-XY type="columnlist" data="{'columnid':[7247539],'columntype':'self'}"><#list columns as column><a href="${column.url!}" class=""  target="_self">INFOGRAPHICS</a></#list></FOUNDER-XY></span></h1>
 <div style="margin-bottom:24px; width:250px; height:164px; overflow:hidden;"><FOUNDER-XY type="articlelist" data="{'columnid':[7247648], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 0, 'count': 1}"><#list articles as article><a   href="${article.url}" ><img src="${article.picBig}"   border=0 width="250" height="164"> </a></#list></FOUNDER-XY></div>
-<div style="margin-bottom:10px; width:250px; height:164px; overflow:hidden;"><FOUNDER-XY type="articlelist" data="{'columnid':[7247648], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 1, 'count': 1}"><#list articles as article><a   href="${article.url}"  target="_self"><img src="${article.picBig}"   border=0 width="250" height="164"> </a></#list></FOUNDER-XY></div>
+<div style="margin-bottom:24px; width:250px; height:164px; overflow:hidden;"><FOUNDER-XY type="articlelist" data="{'columnid':[7247648], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 1, 'count': 1}"><#list articles as article><a   href="${article.url}" ><img src="${article.picBig}"   border=0 width="250" height="164"> </a></#list></FOUNDER-XY></div>
+<div style="margin-bottom:10px; width:250px; height:164px; overflow:hidden;"><FOUNDER-XY type="articlelist" data="{'columnid':[7247648], 'articletype': 'all', 'article_attr': 'COMMON', 'columntype':'self', 'showall':'true', 'start': 2, 'count': 1}"><#list articles as article><a   href="${article.url}"  target="_self"><img src="${article.picBig}"   border=0 width="250" height="164"> </a></#list></FOUNDER-XY></div>
 <div style="text-align:center; padding-top:20px;"><img src="http://images.china.cn/images1/en/gxb/2.jpg" width="203" height="92" style=" transform: scale(1);" /></div>
 </div>
 <div class="box2l" style="margin-top:20px;">
@@ -531,17 +549,77 @@ $(function(){
 })
 </script>
 <script type="text/javascript">
-    (function ($) {
+    (function($) {
         var wTop = $('.newbox1').offset().top;
         $(window).scroll(function () {
             var t = $(document).scrollTop();
             if (t >= wTop) {
-                $('.newbox1').css({ 'position': 'fixed', 'z-index': '99999','bottom': '60px','right': '100px','width':'300px','transform': 'scale(.5,.5)'});
-            } else {
+                if($('.btnClose').hasClass("recovery")){
+                    $('.newbox1').css({ 'position': 'static','transform': 'scale(1,1)','width':'594px'});
+                    $('.btnClose').css({ 'display': 'none'});
+                }else{
+                   $('.newbox1').css({ 'position': 'fixed', 'z-index': '99999','bottom': '60px','right': '100px','width':'300px','transform': 'scale(.5,.5)'});
+                    $('.btnClose').css({ 'display': 'block'}); 
+                }  
+            } else{
                 $('.newbox1').css({ 'position': 'static','transform': 'scale(1,1)','width':'594px'});
+                $('.btnClose').css({ 'display': 'none'});
+                $('.btnClose').removeClass("recovery");
             }
         });         
     })(jQuery);
+    function closebtn(){
+        $('.newbox1').css({ 'position': 'static','transform': 'scale(1,1)','width':'594px'});
+        $('.btnClose').css({ 'display': 'none'});
+        $('.btnClose').addClass("recovery");
+    }
+</script>
+<script type="text/javascript">
+var featured_lis=document.querySelectorAll("#featured .featured_list li");
+var featured_divs=document.querySelectorAll("#featured .featured_img");
+//封装共用函数
+function featured_show(a){
+	//找到每个li对应的div
+	for(var k=0;k<featured_divs.length;k++){
+		featured_divs[k].className="featured_img"; //设置div初始化
+		featured_divs[a].className="featured_img featuredshow"; //设置移入li对应的div
+		featured_lis[k].className="";
+	}
+}
+for(var g=0,h=0;g<featured_lis.length;g++){
+	//给每个li绑定鼠标移入事件
+	featured_lis[g].onmouseover=function(){
+		//找到当前li的下标
+		for(var f=0;f<featured_lis.length;f++){
+			if(this==featured_lis[f]){
+				n=f;
+				featured_show(h);
+			}
+		}
+	}
+	//给每个li绑定鼠标移出事件
+	featured_lis[g].onmouseout=function(){
+		featured_lis[h].className="hover";
+	}
+}
+//点击左边div绑定事件
+document.querySelectorAll("#featured .featured_left")[0].onclick=function(){
+	h-=1;
+	(h==-1)&&(h=featured_lis.length-1);
+	featured_show(h);
+	featured_lis[h].className="hover";
+}
+//点击右边div绑定事件
+document.querySelectorAll("#featured .featured_right")[0].onclick=function(){
+	h+=1;
+	(h==featured_lis.length)&&(h=0);
+	featured_show(h);
+	featured_lis[h].className="hover";
+}
+
+$(function(){
+    $(".featured_img:first").addClass("featuredshow");
+})
 </script>
 
 </body>

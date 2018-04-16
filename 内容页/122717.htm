@@ -179,8 +179,10 @@ a{color: #000;}
 </div>
 
 <div class="cp"><FOUNDER-XY type="article" data="{}"><div id="vf">
+    <div class="btnClose" onclick="closebtn()" style="font-size: 30px;font-weight: bold;color: #000000;font-family: 宋体,serif;width: 600px; margin-left:140px;text-align: right;display:none;cursor: pointer;" title="关闭窗口">×</div> 
       <div id="videoarea" style="width: 600px; height: 335px; margin-left:140px;" align="center"></div>
      </div>
+    
      <br />
      ${article.content}</FOUNDER-XY></div>
 
@@ -242,16 +244,29 @@ window.onload = menu;
 </script>
 <script type="text/javascript">
     (function ($) {
-        var wTop = $('#videoarea').offset().top;
+        var wTop = $('#vf').offset().top;
         $(window).scroll(function () {
             var t = $(document).scrollTop();
             if (t >= wTop) {
-                $('#videoarea').css({ 'position': 'fixed', 'z-index': '99999','bottom': '60px','right': '100px','width':'300px','transform': 'scale(.5,.5)'});
+                if($('.btnClose').hasClass("recovery")){
+                    $('#vf').css({ 'position': 'static','transform': 'scale(1,1)'});
+                    $('.btnClose').css({ 'display': 'none'});
+                }else{
+                    $('#vf').css({ 'position': 'fixed', 'z-index': '99999','bottom': '60px','right': '-160px','transform': 'scale(.5,.5)' });
+                    $('.btnClose').css({ 'display': 'block'});
+                }
             } else {
-                $('#videoarea').css({ 'position': 'static','transform': 'scale(1,1)','width':'600px'});
+                $('#vf').css({ 'position': 'static','transform': 'scale(1,1)'});
+                $('.btnClose').css({ 'display': 'none'});
+                $('.btnClose').removeClass("recovery");
             }
         });         
     })(jQuery);
+    function closebtn(){
+        $('#vf').css({ 'position': 'static','transform': 'scale(1,1)'});
+        $('.btnClose').css({ 'display': 'none'});
+        $('.btnClose').addClass("recovery");
+    }
 </script>
 </body>
 </html>
